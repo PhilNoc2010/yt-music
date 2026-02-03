@@ -22,7 +22,6 @@ def on_progress(stream, chunk, bytes_remaining):
     per = str(int(percentage_of_completion))
     pPercentage.configure(text=per + "%")
     pPercentage.update()
-
     progressBar.set(float(percentage_of_completion / 100))
 
 
@@ -37,6 +36,11 @@ app.title("YouTube Downloader")
 #UI Elements
 title = customtkinter.CTkLabel(app, text="Insert a youtube link")
 title.pack(padx=10, pady=10)
+
+#audio video choice
+choice_var = tkinter.BooleanVar()
+choice = customtkinter.CTkCheckBox(app, text="Audio Only")
+choice.pack(padx=10, pady=10)
 
 #link input
 url_var = tkinter.StringVar()
